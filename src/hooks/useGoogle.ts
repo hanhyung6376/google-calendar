@@ -14,7 +14,10 @@ const useGoogle = () => {
             await insertAPI({ summary, description, visibility, date });
             setCalendar({
                 ...calendar,
-                [week[date.getDay()]]: [...calendar[week[date.getDay()]], { summary, description, visibility }]
+                [week[date.getDay()]]: [
+                    ...calendar[week[date.getDay()]],
+                    { id: `${calendar[week[date.getDay()]].length}`, summary, description, visibility }
+                ]
             });
             alert('add event success');
         } catch (err) {
@@ -36,9 +39,9 @@ const useGoogle = () => {
             const data = calendarList.reduce(
                 (acc: CalendarData, cur: Items) => {
                     const weekDay = week[new Date(cur.start.dateTime).getDay()];
-                    const { summary, description, visibility } = cur;
+                    const { id, summary, description, visibility } = cur;
 
-                    return { ...acc, [weekDay]: [...acc[weekDay], { summary, description, visibility }] };
+                    return { ...acc, [weekDay]: [...acc[weekDay], { id, summary, description, visibility }] };
                 },
                 {
                     SUN: [],

@@ -40,6 +40,7 @@ interface attendees {
 }
 
 export interface Items {
+    id: string;
     summary: string;
     description: string;
     visibility: string;
@@ -47,6 +48,7 @@ export interface Items {
 }
 
 export interface CalendarItems {
+    id: string;
     summary: string;
     description: string;
     visibility: string;

@@ -10,7 +10,7 @@ const Calendar: FC<CalendarProps> = ({ items, week }) => {
         <>
             <Flex container flexDirection="row" justifyContent="space-between">
                 {day.map((value, index) => (
-                    <List day={value} date={week[index]} items={items[value]} />
+                    <List day={value} date={week[index]} items={items[value]} key={`${week[index]}`} />
                 ))}
             </Flex>
         </>
