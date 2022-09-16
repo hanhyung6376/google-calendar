@@ -18,7 +18,6 @@ const useGoogle = () => {
             });
             alert('add event success');
         } catch (err) {
-            console.log(err);
             alert('add event failed');
         }
     };
@@ -54,7 +53,6 @@ const useGoogle = () => {
 
             return data;
         } catch (err) {
-            console.log(err);
             alert('calendar load error');
 
             return null;
