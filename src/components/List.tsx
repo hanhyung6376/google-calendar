@@ -31,7 +31,7 @@ const List: FC<ListProps> = ({ day, date, items }) => {
             <Text variant="h3">{day}</Text>
             <Flex container flexDirection="column" alignItems="center" spacing="1rem">
                 {items.map((value) => (
-                    <Text fontSize="8px" onClick={() => onClick(value)}>
+                    <Text fontSize="8px" onClick={() => onClick(value)} key={`${value.summary}-${date}`}>
                         - {value.summary}
                     </Text>
                 ))}
