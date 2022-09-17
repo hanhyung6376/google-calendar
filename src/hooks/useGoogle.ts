@@ -32,8 +32,8 @@ const useGoogle = () => {
 
             const calendarList = result.data.items.reduce((acc: Items[], cur: Calendar) => {
                 const { id, summary, description, start, visibility } = cur;
-
-                return [...acc, { id, summary, description, start, visibility }];
+                console.log(visibility);
+                return [...acc, { id, summary, description, start, visibility: visibility !== undefined ? visibility : 'default' }];
             }, []);
 
             const data = calendarList.reduce(
